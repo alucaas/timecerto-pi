@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Início — TimeCerto</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="app.js" defer></script>
+    </head>
+    <body data-pagina="inicio">
+        <header class="cabecalho">
+            <a class="marca" href="index.html">
+                <img src="imagens/logotipo.svg" width="34" height="34" alt="" />
+                TimeCerto
+            </a>
+            <nav aria-label="Menu principal">
+                <a href="index.html">Início</a>
+                <a class="botao" href="views/criar.html">Criar partida</a>
+            </nav>
+            <div class="usuario">
+                <div
+                    class="foto-usuario"
+                    role="img"
+                    aria-label="Espaço reservado para a foto de Lucas Augusto"
+                ></div>
+                <span class="nome-usuario">Lucas Augusto</span>
+            </div>
+        </header>
+        <main class="pagina">
+            <!-- A pesquisa fica acima dos filtros e das listas de partidas. -->
+            <form id="form-pesquisa" class="painel pesquisa" onsubmit="pesquisarPartidas(event)">
+                <label for="pesquisa">Buscar partidas</label>
+                <div class="barra-pesquisa">
+                    <input
+                        id="pesquisa"
+                        name="pesquisa"
+                        type="search"
+                        placeholder="Nome da partida, quadra ou bairro"
+                    />
+                    <button class="botao verde" type="submit">Buscar</button>
+                </div>
+                <div class="filtros">
+                    <div>
+                        <label for="filtro-esporte">Esporte</label>
+                        <select id="filtro-esporte" name="esporte">
+                            <option value="">Todos os esportes</option>
+                            <option>Futebol</option>
+                            <option>Vôlei</option>
+                            <option>Basquete</option>
+                            <option>Futevôlei</option>
+                            <option>Beach tennis</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="filtro-nivel">Nível</label>
+                        <select id="filtro-nivel" name="nivel">
+                            <option value="">Todos os níveis</option>
+                            <option>Iniciante</option>
+                            <option>Intermediário</option>
+                            <option>Avançado</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="filtro-data">Data</label>
+                        <input id="filtro-data" name="data" type="date" />
+                    </div>
+                    <button
+                        class="botao secundario"
+                        type="reset"
+                        onclick="
+                            this.form.reset();
+                            pesquisarPartidas();
+                        "
+                    >
+                        Limpar filtros
+                    </button>
+                </div>
+            </form>
+            <!-- Somente os três exemplos com vagas entram nesta primeira lista. -->
+            <section class="secao" aria-labelledby="titulo-disponiveis">
+                <div class="titulo-secao">
+                    <h1 id="titulo-disponiveis">Partidas com vagas disponíveis</h1>
+                    <span id="total-resultados" class="texto-suave"></span>
+                </div>
+                <div id="partidas-disponiveis" class="grade-cartoes"></div>
+            </section>
+            <!-- As listas pessoais usam os dados salvos durante a sessão da aba. -->
+            <section class="secao" aria-labelledby="titulo-minhas">
+                <div class="titulo-secao">
+                    <h2 id="titulo-minhas">Minhas partidas</h2>
+                    <span class="texto-suave">Suas presenças confirmadas</span>
+                </div>
+                <div id="minhas-partidas" class="lista-partidas"></div>
+            </section>
+            <section class="secao" aria-labelledby="titulo-criadas">
+                <div class="titulo-secao">
+                    <h2 id="titulo-criadas">Partidas criadas por você</h2>
+                    <a href="views/criar.html" class="link-texto">Criar partida</a>
+                </div>
+                <div id="partidas-criadas" class="lista-partidas"></div>
+            </section>
+        </main>
+        <footer>TimeCerto · Encontre seu próximo jogo</footer>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!-- Desenha o cronômetro usado como logotipo do TimeCerto. -->
+<svg
+    preserveAspectRatio="none"
+    overflow="visible"
+    style="display: block"
+    width="34"
+    height="34"
+    viewBox="0 0 34 34"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <g id="Frame">
+        <path
+            id="Vector"
+            d="M19.125 2.125H14.875C14.2882 2.125 13.8125 2.6007 13.8125 3.1875V4.25C13.8125 4.8368 14.2882 5.3125 14.875 5.3125H19.125C19.7118 5.3125 20.1875 4.8368 20.1875 4.25V3.1875C20.1875 2.6007 19.7118 2.125 19.125 2.125Z"
+            fill="#0A7F48"
+        />
+        <path
+            id="Vector_2"
+            d="M28.6875 19.125C28.6875 25.5798 23.4548 30.8125 17 30.8125C10.5452 30.8125 5.3125 25.5798 5.3125 19.125C5.3125 12.6702 10.5452 7.4375 17 7.4375C23.4548 7.4375 28.6875 12.6702 28.6875 19.125Z"
+            stroke-width="5"
+            stroke="#0A7F48"
+        />
+        <path
+            id="Vector_3"
+            d="M11.1562 19.3906L15.4062 23.375L23.375 14.875"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="#FF7A1A"
+        />
+    </g>
+</svg>

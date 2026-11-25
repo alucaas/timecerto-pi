@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Criar partida — TimeCerto</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <script src="../app.js" defer></script>
+    </head>
+    <body data-pagina="criar">
+        <header class="cabecalho">
+            <a class="marca" href="../index.html">
+                <img src="../imagens/logotipo.svg" width="34" height="34" alt="" />
+                TimeCerto
+            </a>
+            <nav aria-label="Menu principal">
+                <a href="../index.html">Início</a>
+                <a class="botao" href="criar.html">Criar partida</a>
+            </nav>
+            <div class="usuario">
+                <div
+                    class="foto-usuario"
+                    role="img"
+                    aria-label="Espaço reservado para a foto de Lucas Augusto"
+                ></div>
+                <span class="nome-usuario">Lucas Augusto</span>
+            </div>
+        </header>
+        <main class="pagina pagina-estreita">
+            <a class="link-texto voltar" href="../index.html">← Voltar ao Início</a>
+            <!-- Campos nativos do HTML e validação do formulário. -->
+            <form id="formulario-partida" class="painel formulario" onsubmit="criarPartida(event)">
+                <h1>Criar partida</h1>
+                <p class="texto-suave">Organize o jogo e convide outras pessoas para participar.</p>
+                <label for="titulo">Nome da partida</label>
+                <input
+                    id="titulo"
+                    name="titulo"
+                    maxlength="80"
+                    placeholder="Ex.: Vôlei entre amigos"
+                    required
+                />
+                <div class="linha">
+                    <div>
+                        <label for="esporte">Esporte</label>
+                        <select id="esporte" name="esporte">
+                            <option>Futebol</option>
+                            <option>Vôlei</option>
+                            <option>Basquete</option>
+                            <option>Futevôlei</option>
+                            <option>Beach tennis</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="nivel">Nível</label>
+                        <select id="nivel" name="nivel">
+                            <option>Iniciante</option>
+                            <option selected>Intermediário</option>
+                            <option>Avançado</option>
+                        </select>
+                    </div>
+                </div>
+                <label for="local">Local</label>
+                <input
+                    id="local"
+                    name="local"
+                    placeholder="Nome da quadra ou bairro"
+                    maxlength="100"
+                    required
+                />
+                <div class="linha">
+                    <div>
+                        <label for="data">Data</label>
+                        <input id="data" name="data" type="date" required />
+                    </div>
+                    <div>
+                        <label for="horario">Horário</label>
+                        <input id="horario" name="horario" type="time" required />
+                    </div>
+                </div>
+                <div class="linha">
+                    <div>
+                        <label for="capacidade">Total de vagas</label>
+                        <input
+                            id="capacidade"
+                            name="capacidade"
+                            type="number"
+                            min="2"
+                            max="200"
+                            value="10"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label for="preco">Valor por pessoa (R$)</label>
+                        <input
+                            id="preco"
+                            name="preco"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            value="0"
+                            required
+                        />
+                    </div>
+                </div>
+                <label for="descricao">Descrição</label>
+                <textarea
+                    id="descricao"
+                    name="descricao"
+                    rows="3"
+                    maxlength="500"
+                    placeholder="Regras, o que levar e observações"
+                ></textarea>
+                <p id="erro-criacao" class="mensagem erro" role="alert"></p>
+                <div class="acoes">
+                    <a href="../index.html" class="botao secundario">Cancelar</a>
+                    <button class="botao" type="submit">Criar partida</button>
+                </div>
+            </form>
+        </main>
+        <footer>TimeCerto · Encontre seu próximo jogo</footer>
+    </body>
+</html>

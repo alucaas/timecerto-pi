@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Confirmar participação — TimeCerto</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <script src="../app.js" defer></script>
+    </head>
+    <body data-pagina="confirmacao">
+        <header class="cabecalho">
+            <a class="marca" href="../index.html">
+                <img src="../imagens/logotipo.svg" width="34" height="34" alt="" />
+                TimeCerto
+            </a>
+            <nav aria-label="Menu principal">
+                <a href="../index.html">Início</a>
+                <a class="botao" href="criar.html">Criar partida</a>
+            </nav>
+            <div class="usuario">
+                <div
+                    class="foto-usuario"
+                    role="img"
+                    aria-label="Espaço reservado para a foto de Lucas Augusto"
+                ></div>
+                <span class="nome-usuario">Lucas Augusto</span>
+            </div>
+        </header>
+        <main class="pagina">
+            <a class="link-texto voltar" href="../index.html">← Voltar ao Início</a>
+            <!-- Uma única tela recebe os dados da partida escolhida. -->
+            <div id="partida-nao-encontrada" class="painel" hidden>
+                <h1>Partida não encontrada</h1>
+                <p>Volte ao Início para selecionar uma partida disponível nesta sessão.</p>
+            </div>
+            <div id="detalhes-partida" class="area-confirmacao" hidden>
+                <article class="painel informacoes">
+                    <img id="banner-confirmacao" class="banner banner-detalhes" alt="" />
+                    <div class="conteudo-detalhes">
+                        <span id="esporte-confirmacao" class="etiqueta"></span>
+                        <h1 id="titulo-confirmacao"></h1>
+                        <p id="organizador-confirmacao" class="texto-suave"></p>
+                        <dl class="dados-detalhes">
+                            <div>
+                                <dt>Local</dt>
+                                <dd id="local-confirmacao"></dd>
+                            </div>
+                            <div>
+                                <dt>Data e horário</dt>
+                                <dd id="data-confirmacao"></dd>
+                            </div>
+                            <div>
+                                <dt>Nível</dt>
+                                <dd id="nivel-confirmacao"></dd>
+                            </div>
+                            <div>
+                                <dt>Valor por pessoa</dt>
+                                <dd id="preco-confirmacao"></dd>
+                            </div>
+                        </dl>
+                        <h2>Sobre a partida</h2>
+                        <p id="descricao-confirmacao"></p>
+                        <div class="participantes">
+                            <h2>Lista de participantes</h2>
+                            <p id="aviso-lista" class="texto-suave"></p>
+                            <ul id="lista-participantes"></ul>
+                        </div>
+                    </div>
+                </article>
+                <aside class="painel reserva">
+                    <h2 id="vagas-confirmacao"></h2>
+                    <p>
+                        Confirme sua presença como
+                        <strong class="nome-usuario">Lucas Augusto</strong>
+                        .
+                    </p>
+                    <!-- A segunda opção abre o campo de nome sem reservar nenhuma vaga ainda. -->
+                    <div id="campo-acompanhante" hidden>
+                        <label for="nome-acompanhante">Nome da outra pessoa</label>
+                        <input
+                            id="nome-acompanhante"
+                            maxlength="80"
+                            autocomplete="off"
+                            placeholder="Digite o nome do acompanhante"
+                        />
+                    </div>
+                    <button
+                        id="confirmar-sozinho"
+                        class="botao verde"
+                        type="button"
+                        onclick="confirmarParticipacao(event)"
+                    >
+                        Confirmar minha presença
+                    </button>
+                    <button
+                        id="confirmar-dupla"
+                        class="botao secundario"
+                        type="button"
+                        data-dupla="sim"
+                        onclick="confirmarParticipacao(event)"
+                    >
+                        Confirmar você e mais uma pessoa
+                    </button>
+                    <p
+                        id="mensagem-confirmacao"
+                        class="mensagem"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+                    <a class="link-texto" href="../index.html#titulo-minhas">Ver minhas partidas</a>
+                </aside>
+            </div>
+        </main>
+        <footer>TimeCerto · Encontre seu próximo jogo</footer>
+    </body>
+</html>
